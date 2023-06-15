@@ -4,26 +4,35 @@
   На сайте будут учетные записи администратора(-ов) и пользователей(заказчиков). Будет производиться учет клиентов, чеков и документации.
   В моей базе данных будут находиться такие таблицы:
     Таблица Admin
-      *IDAdmin
+      *IDAdmin (PK)
       *Name
       *Phone
       *Mail
       *Login
       *Password
     Таблица Users
-      *IDUser
+      *IDUser (PK)
       *Name
       *SurName
       *Phone
       *Login
       *Password
     Таблица Check
-      *IDCheck
-      *IDRequest
+      *IDCheck (PK)
+      *IDRequest (FK)
+      *IDType (FK)
       *Cost
     Таблица Request
-      *IDRequest
-      *IDUser
-      *IDAdmin
-      *Document
+      *IDRequest (PK)
+      *IDUser (FK)
+      *IDAdmin (FK)
+      *IDDocument (FK)
+      *Date
+    Таблица Document
+      *IDDocument (PK)
+      *NameDocument
+      *DocumentPath
+    Таблица TypeOfPayment
+      *IDType (PK)
+      *TypeName
       
